@@ -3,12 +3,14 @@
 This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
 <lib desc="#Wiring" name="0">
     <tool name="Splitter">
+      <a name="facing" val="west"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
       <a name="appear" val="center"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
+      <a name="pull" val="1"/>
     </tool>
     <tool name="Clock">
       <a name="facing" val="west"/>
@@ -18,8 +20,14 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="7"/>
       <a name="value" val="0x0"/>
     </tool>
+    <tool name="Power">
+      <a name="facing" val="south"/>
+    </tool>
   </lib>
   <lib desc="#Gates" name="1">
+    <tool name="NOT Gate">
+      <a name="facing" val="west"/>
+    </tool>
     <tool name="AND Gate">
       <a name="inputs" val="2"/>
     </tool>
@@ -71,6 +79,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </tool>
     <sep/>
     <tool lib="0" name="Pin">
+      <a name="facing" val="south"/>
       <a name="tristate" val="false"/>
     </tool>
     <tool lib="0" name="Pin">
@@ -885,6 +894,102 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="1" loc="(510,590)" name="XOR Gate">
       <a name="inputs" val="2"/>
+    </comp>
+  </circuit>
+  <circuit name="RAM">
+    <a name="circuit" val="RAM"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(680,470)" to="(680,480)"/>
+    <wire from="(350,360)" to="(410,360)"/>
+    <wire from="(500,400)" to="(500,470)"/>
+    <wire from="(710,300)" to="(730,300)"/>
+    <wire from="(710,410)" to="(730,410)"/>
+    <wire from="(610,410)" to="(640,410)"/>
+    <wire from="(610,300)" to="(640,300)"/>
+    <wire from="(550,360)" to="(610,360)"/>
+    <wire from="(540,470)" to="(580,470)"/>
+    <wire from="(610,470)" to="(680,470)"/>
+    <wire from="(670,220)" to="(670,250)"/>
+    <wire from="(610,300)" to="(610,360)"/>
+    <wire from="(610,360)" to="(610,410)"/>
+    <wire from="(480,400)" to="(480,490)"/>
+    <wire from="(680,450)" to="(680,470)"/>
+    <wire from="(500,470)" to="(540,470)"/>
+    <comp lib="0" loc="(710,300)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(350,360)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Addr Input"/>
+    </comp>
+    <comp lib="0" loc="(640,300)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="1" loc="(580,470)" name="NOT Gate">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(460,400)" name="Power">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(520,400)" name="Ground"/>
+    <comp lib="0" loc="(730,410)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Value Input"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(680,480)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Enable Input"/>
+    </comp>
+    <comp loc="(660,440)" name="Bus_Interface">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="0" loc="(710,410)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(480,490)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="4" loc="(550,360)" name="RAM">
+      <a name="addrWidth" val="4"/>
+    </comp>
+    <comp lib="0" loc="(540,470)" name="Pull Resistor">
+      <a name="facing" val="north"/>
+      <a name="pull" val="1"/>
+    </comp>
+    <comp lib="0" loc="(670,220)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Enable Output"/>
+    </comp>
+    <comp loc="(690,260)" name="Bus_Interface"/>
+    <comp lib="0" loc="(730,300)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="Value Output"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(640,410)" name="Splitter">
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+      <a name="appear" val="center"/>
     </comp>
   </circuit>
 </project>
